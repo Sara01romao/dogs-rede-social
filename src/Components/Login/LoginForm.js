@@ -12,19 +12,22 @@ export default function LoginForm() {
     function handleSubmit(event){
         event.preventDefault();
 
+        if(username.validate() && password.validade()){
 
-        fetch('https://dogsapi.origamid.dev/json/jwt-auth/v1/token',{
-            method:'POST',
-            headers:{
-                'Content-Type' : 'application/json',
-            },
-            body:JSON.stringify(),
-        }).then((response)=>{
-            console.log(response);
-            return response.json();
-        }).then((json)=>{
-            console.log(json)
-        })
+            fetch('https://dogsapi.origamid.dev/json/jwt-auth/v1/token',{
+                method:'POST',
+                headers:{
+                    'Content-Type' : 'application/json',
+                },
+                body:JSON.stringify(),
+            }).then((response)=>{
+                console.log(response);
+                return response.json();
+            }).then((json)=>{
+                console.log(json)
+            })
+
+        }
     }
 
   return (
@@ -41,5 +44,3 @@ export default function LoginForm() {
     </section>
   )
 }
-
-//4
