@@ -17,7 +17,7 @@ export  function TOkEN_POST(body){
 
 export  function TOkEN_VALIDATE_POST(token){
     return{
-        url:API_URL + '/jwt-auth/v1/validate',
+        url:API_URL + '/jwt-auth/v1/token/validate',
         options:{
             method:'POST',
             headers:{
