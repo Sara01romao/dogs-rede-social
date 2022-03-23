@@ -44,6 +44,8 @@ export default function UserStorage({children}) {
                 setLoading(false);
               }
                
+            }else{
+                setLogin(false)
             }
         }
         autoLogin();
