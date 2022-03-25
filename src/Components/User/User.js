@@ -11,7 +11,7 @@ export default function User() {
       <UserHeader/>
       <Routes>
         <Route path='/' element={<Feed/>}/>
-        <Route path='posta' element={<UserPhotoPost/>}/>
+        <Route path='postar' element={<UserPhotoPost/>}/>
         <Route path='estatisticas' element={<UserStats/>}/>
       </Routes>
     </section>
