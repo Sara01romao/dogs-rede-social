@@ -11,7 +11,7 @@ export default function PhotoContent({data}) {
         <div className={styles.img}><img src={photo.src} alt={photo.title}/></div>
         <div className={styles.details}>
             <div>
-                <p>
+                <p className={styles.author}>
                     <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
                     <span className={styles.visualizacoes}>{photo.acessos}</span>
                 </p>
@@ -25,7 +25,7 @@ export default function PhotoContent({data}) {
             </div>
 
         </div>
-        <PhotoComments id={photo.id} comments={comments}/>
+       {/*  <PhotoComments id={photo.id} comments={comments}/> */}
 
     </div>
   )
