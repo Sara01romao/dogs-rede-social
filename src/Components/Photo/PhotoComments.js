@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import {UserContext} from '../../UserContext';
 import PhotoCommentsForm from './PhotoCommentsForm';
 import styles from './PhotoComments.module.css'
@@ -6,10 +6,17 @@ import styles from './PhotoComments.module.css'
 
 export default function PhotoComments(props) {
   const [comments, setComments] = useState(() => props.comments)
-  const {login} = useContext(UserContext)
+  const commentsSection = useRef(null);
+  const {login} = useContext(UserContext);
+
+  useEffect(() =>{
+    commentsSection.current.scrollTop = commentsSection.current.scrollHeight;
+  }, [comments])
+
+
   return (
     <>
-        <ul className={styles.comments}>
+        <ul ref={commentsSection} className={styles.comments}>
           {comments.map(comment => <li key={comment.comment_ID}>
             <b>{comment.comment_author}:</b>
             <span>{comment.comment_content}</span>
