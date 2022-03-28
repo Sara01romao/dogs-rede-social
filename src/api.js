@@ -74,12 +74,7 @@ export function PHOTO_POST(formData, token){
     }
 }
 
-/* export function PHOTO(id){
-    return{
-        url:`${API_URL}/api/photo/${id}}`,
-        
-    }
-} */
+
 
 export function PHOTOS_GET({page, total, user}){
     return{
@@ -127,6 +122,20 @@ export function PHOTO_DELETE(id){
             headers:{
                 Authorization: 'Bearer' + window.localStorage.getItem('token'),
             }
+        }
+    }
+}
+
+
+export function PASSWORD_LOST(body){
+    return{
+        url:API_URL + '/api/password/lost',
+        options:{
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(body),
         }
     }
 }
