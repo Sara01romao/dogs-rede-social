@@ -4,7 +4,7 @@ import Button from '../Forms/Button';
 import useForm from '../../Hooks/useForm';
 import useFetch from '../../Hooks/useFetch';
 import { PASSWORD_LOST } from '../../api';
-import Error from '../Helper/Error'
+import Error from '../Helper/Error';
 
 
 export default function LoginPasswordLost() {
