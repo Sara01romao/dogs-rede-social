@@ -10,6 +10,7 @@ const UserStatsGraphs = React.lazy(() => import('./UserStatsGraphs'))
 
 export default function UserStats() {
   const {data, error, loading, request} = useFetch();
+  
   useEffect(()=>{
     async function getData(){
       const {url, options} = STATS_GET();
@@ -23,11 +24,11 @@ export default function UserStats() {
   if(error) return <Error error={error}/>
   if(data)
   return (
-    <React.Suspense fallback={<div><Head title="Estatísticas" /> Não tem</div>}>
+    <React.Suspense fallback={<div><Head title="Estatísticas" /></div>}>
        <Head title="Estatísticas" />
        <UserStatsGraphs data={data}/>
      
     </React.Suspense>
   )
-  else return null;
+  else return null
 }

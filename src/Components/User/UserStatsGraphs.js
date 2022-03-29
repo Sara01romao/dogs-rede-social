@@ -6,7 +6,7 @@ export default function UserStatsGraphs({data}) {
   
   const [graph, setGraph] = useState([]);
   const [total, setTotal] = useState(0);
-  
+ 
   
   useEffect(() =>{
     const graphData = data.map(item =>{
@@ -15,8 +15,10 @@ export default function UserStatsGraphs({data}) {
             y:Number(item.acessos)
         }
     })
-    
-    setTotal(data.map(({acessos}) => Number(acessos)).reduce((a, b) => a + b));
+
+    if(data.length !== 0){
+        setTotal(data.map(({acessos})=> Number(acessos)).reduce((a,b) => a +b))
+    }
     setGraph(graphData)
   },[data])
 
@@ -26,7 +28,9 @@ export default function UserStatsGraphs({data}) {
       <div className={`${styles.total} ${styles.graphItem}`}>
           <p>Acessos: {total}</p>
       </div>
-      <div className={styles.graphItem}>
+     
+     {data.length !==0 ? <div className={styles.graphs} >
+        <div className={styles.graphItem} >
           <VictoryPie 
           data={graph} 
           innerRadius={50} 
@@ -50,6 +54,10 @@ export default function UserStatsGraphs({data}) {
               <VictoryBar alignment='start' data={graph}></VictoryBar>
           </VictoryChart>
       </div>
+
+      </div>: ('')}
+     
+      
     </section>
   )
   
