@@ -12,7 +12,7 @@
  - Hooks
  - useContext
  - CSS modules
- - Componentes
+ - Components
  - React Router
 <br>
 
