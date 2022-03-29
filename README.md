@@ -8,7 +8,7 @@
 
 ## 💻  Sobre o Projeto
  Projeto final do curso de React Completo - Origamid.
- Uma rede social para cachorros, contruída com os fundamentos do framework:
+ Uma rede social para cachorros, contruída com os fundamentos do React:
  - Hooks
  - useContext
  - CSS modules
